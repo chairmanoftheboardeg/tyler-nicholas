@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog | Tyler Nicholas</title>
+    <link rel="icon" type="image/png" href="image/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* [Standard CSS Block] */
+        :root { --blue: #00AEEF; --navy: #001F4C; --white: #FFF; --bg: #F8F9FA; }
+        body { font-family: 'Roboto', sans-serif; margin: 0; color: var(--navy); background: var(--bg); }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        header { background: rgba(255,255,255,0.9); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 100; border-bottom: 2px solid var(--blue); padding: 15px 0; }
+        .nav-container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
+        .logo { font-weight: 900; font-size: 1.4rem; }
+        nav a { margin-left: 15px; font-weight: 500; }
+        nav a:hover, nav a.active { color: var(--blue); }
+        .dropdown { position: relative; display: inline-block; }
+        .dropdown-content { display: none; position: absolute; right: 0; background: white; min-width: 180px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-top: 3px solid var(--blue); }
+        .dropdown-content a { display: block; padding: 12px 15px; }
+        .dropdown:hover .dropdown-content { display: block; }
+        footer { background: var(--navy); color: #ccc; text-align: center; padding: 50px 20px; margin-top: 80px; }
+        .socials a { color: var(--blue); font-size: 1.3rem; margin: 0 10px; }
+        .fade-in { opacity: 0; transform: translateY(20px); transition: 0.6s; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* Page Specific */
+        .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1000px; margin: 50px auto; padding: 0 20px; }
+        .blog-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: 0.3s; }
+        .blog-card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+        .card-header { height: 150px; background: linear-gradient(135deg, var(--blue), var(--navy)); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem; padding: 20px; text-align: center; }
+        .card-body { padding: 25px; }
+        .meta { color: var(--blue); font-size: 0.85rem; margin-bottom: 10px; font-weight: 500; }
+        .read-more { color: var(--blue); font-weight: 700; display: inline-block; margin-top: 15px; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">TYLER NICHOLAS</a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="about-me.html">About</a>
+                <a href="my-projects.html">Projects</a>
+                <a href="my-cv.html">CV</a>
+                <div class="dropdown">
+                    <a href="#">More ▼</a>
+                    <div class="dropdown-content">
+                        <a href="my-blog.html">Blog</a>
+                        <a href="my-story.html">Story</a>
+                        <a href="my-experiences.html">Experiences</a>
+                        <a href="my-school.html">School</a>
+                        <a href="social-links.html">Socials</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="blog-grid fade-in">
+        <div class="blog-card">
+            <div class="card-header">FoodShare Seychelles</div>
+            <div class="card-body">
+                <h2>New Role: Tech Coordinator</h2>
+                <div class="meta">Dec 8, 2025 | Tech & Community</div>
+                [cite_start]<p>[cite: 360] I'm excited to announce my new role as the Technology Coordinator at FoodShare Seychelles, leveraging digital solutions to streamline operations.</p>
+                <a href="#" class="read-more">Read More →</a>
+            </div>
+        </div>
+
+        <div class="blog-card">
+            <div class="card-header" style="background: linear-gradient(135deg, #4682B4, #1E90FF);">Aviation Insight</div>
+            <div class="card-body">
+                <h2>777X vs A350</h2>
+                <div class="meta">Aviation & Tech</div>
+                [cite_start]<p>[cite: 375] A technical deep-dive into the design philosophy and economic impact of the next generation of wide-body commercial jets.</p>
+                <a href="#" class="read-more">Read More →</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="socials">
+            <a href="https://www.linkedin.com/in/tyler-nicholas-62999534a" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <p style="margin-top: 20px;">Contact: <a href="mailto:tyler.nicholasefs@gmail.com" style="color: var(--blue);">tyler.nicholasefs@gmail.com</a></p>
+        <p style="font-size: 0.8rem;">&copy; 2025 Tyler Nicholas.</p>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
