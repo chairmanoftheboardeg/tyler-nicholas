@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Tyler Nicholas</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" href="https://cdn.dribbble.com/userupload/10871760/file/original-16ab70eca41eafd5561c37303bfe5ed7.jpg?resize=400x0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <a href="/" class="logo">Tyler Nicholas</a>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about/">About</a></li>
+                <li><a href="/projects/">Projects</a></li>
+                <li><a href="/cv/">CV</a></li>
+                <li class="dropdown">
+                    <a href="#">More ▼</a>
+                    <div class="dropdown-content">
+                        <a href="/blog/">Blog</a>
+                        <a href="/story/">Story</a>
+                        <a href="/experience/">Experiences</a>
+                        <a href="/school/">School</a>
+                        <a href="/socials/">Socials</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+<main>
+    <h1>The Notebook</h1>
+    <p class="headline">Thoughts on Business, Tech, and Governance</p>
+
+    <div class="grid" style="margin-top: 3rem;">
+        
+        <div class="card" style="text-align: left;">
+            <p style="color: var(--text-light); font-size: 0.9rem; margin-bottom: 0.5rem;">February 24, 2026</p>
+            <h3 style="color: var(--dark-blue);">The Digital Disconnect: A Critique of Government Communication</h3>
+            <p style="margin-bottom: 1.5rem; line-height: 1.6;">Why establish digital communication channels if they function as black holes? A look into the unresponsiveness of government departments, specifically DICT Seychelles.</p>
+            
+            <div class="full-article" style="display: none; margin-bottom: 1.5rem; border-top: 1px solid #eee; padding-top: 1rem;">
+                <p style="margin-bottom: 1rem; line-height: 1.6;">As we push toward a more digitized and efficient economy in Seychelles, the expectations for government communication naturally evolve. Yet, there remains a glaring inefficiency in how state departments handle public inquiries. The most concerning example is the Department of Information Communications Technology (DICT).</p>
+                
+                <p style="margin-bottom: 1rem; line-height: 1.6;">For a department explicitly tasked with managing "Information" and "Communications," it is profoundly ironic that sending an email to their official contact addresses often results in absolute silence. What is the purpose of maintaining public-facing email addresses or digital contact forms if the internal protocol to actually read and respond to them does not seem to exist?</p>
+                
+                <p style="line-height: 1.6;">As an entrepreneur managing digital ventures like BlueWave Digital, I know firsthand that systemic precision is non-negotiable. Whether you are operating the logistics of a virtual aviation group or managing a national IT infrastructure, a broken communication loop is a critical failure. If we want to foster a true digital economy, our government departments must move beyond simply having a web presence and commit to actual, responsive digital governance.</p>
+            </div>
+
+            <button class="btn read-more-btn" style="border: none; cursor: pointer; padding: 8px 20px; font-size: 0.9rem;">Read Article</button>
+        </div>
+
+    </div>
+</main>
+
+<script>
+    document.querySelectorAll('.read-more-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            // Find the hidden article inside the same card
+            const fullText = this.previousElementSibling;
+            
+            // Toggle it open or closed
+            if (fullText.style.display === 'none') {
+                fullText.style.display = 'block';
+                this.textContent = 'Close Article';
+            } else {
+                fullText.style.display = 'none';
+                this.textContent = 'Read Article';
+            }
+        });
+    });
+</script>
+
+    <footer>
+    <div class="social-icons">
+        <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" target="_blank" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="#" target="_blank" aria-label="Snapchat"><i class="fab fa-snapchat"></i></a>
+    </div>
+    
+    <p class="contact-info">
+        Contact: <a href="mailto:tyler.nicholasefs@gmail.com" class="email-link">tyler.nicholasefs@gmail.com</a>
+    </p>
+    
+    <p class="copyright">&copy; 2026 Tyler Nicholas. All rights reserved.</p>
+</footer>
+    
+    </body>
+</html>
