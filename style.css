@@ -158,13 +158,50 @@ h1 { font-size: 3rem; color: var(--primary-blue); margin-bottom: 0.5rem; }
 .card h3 { color: var(--primary-blue); margin-bottom: 1rem; }
 .card-email { background-color: var(--card-email); }
 
-/* Footer */
+/* --- Footer Styles --- */
 footer {
-    background-color: var(--dark-blue);
-    color: white;
+    background-color: #021a3a; /* Dark blue background from screenshot */
     text-align: center;
-    padding: 2rem 5%;
+    padding: 3rem 5%;
     margin-top: auto;
 }
-.social-icons { margin-bottom: 1rem; }
-.social-icons a { color: var(--primary-blue); text-decoration: none; margin: 0 10px; font-weight: 600;}
+
+.social-icons {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem; /* Even spacing between icons */
+}
+
+.social-icons a {
+    color: #00a8ff; /* Light blue icons */
+    font-size: 1.8rem; /* Icon size */
+    text-decoration: none;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.social-icons a:hover {
+    color: #ffffff; /* Turns white when hovered */
+    transform: translateY(-3px);
+}
+
+.contact-info {
+    color: #ffffff; /* White text for 'Contact:' */
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.email-link {
+    color: #00a8ff; /* Light blue for the email address */
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.email-link:hover {
+    text-decoration: underline;
+}
+
+.copyright {
+    color: #d1d5db; /* Slightly dimmed white/grey for copyright */
+    font-size: 0.9rem;
+}
