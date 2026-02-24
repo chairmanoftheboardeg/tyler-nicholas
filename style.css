@@ -197,6 +197,175 @@ footer {
     font-weight: 500;
 }
 
+/* --- ADVANCED CINEMATIC LOADING SCREEN --- */
+#loader-wrapper {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    animation: hideLoader 0.1s 2.8s forwards;
+}
+
+.loader-background {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: #021a3a;
+    animation: fadeOutBg 0.8s 2s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+.loader-content {
+    position: relative;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeOutUp 0.6s 1.7s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+.loader-ring {
+    width: 60px;
+    height: 60px;
+    border: 3px solid rgba(255,255,255,0.05);
+    border-top-color: #00a8ff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 25px;
+}
+
+.loader-text-wrapper { text-align: center; }
+
+.loader-title {
+    display: block;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 8px;
+    /* Dynamic letter spacing reveal */
+    animation: trackingIn 1.2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+.loader-subtitle {
+    display: block;
+    font-size: 0.85rem;
+    color: #00a8ff;
+    letter-spacing: 4px;
+    font-family: monospace;
+    animation: pulseText 1.5s infinite;
+}
+
+/* Loader Keyframes */
+@keyframes spin { 100% { transform: rotate(360deg); } }
+@keyframes trackingIn { 
+    0% { letter-spacing: -0.5em; opacity: 0; } 
+    40% { opacity: 0.6; } 
+    100% { letter-spacing: 6px; opacity: 1; } 
+}
+@keyframes pulseText { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+@keyframes fadeOutUp { 100% { opacity: 0; transform: translateY(-40px); } }
+@keyframes fadeOutBg { 100% { opacity: 0; } }
+@keyframes hideLoader { 100% { z-index: -1; visibility: hidden; } }
+
+/* --- PREMIUM ANNOUNCEMENT BAR --- */
+.premium-announcement {
+    position: relative;
+    background: #021024; /* Deeper blue than navbar to stand out */
+    color: white;
+    overflow: hidden;
+    border-bottom: 2px solid #d9222a; /* Red bottom border for political tone */
+}
+
+/* Continuous sweeping shine animation */
+.announcement-bg-anim {
+    position: absolute;
+    top: 0; left: -150%;
+    width: 50%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+    transform: skewX(-20deg);
+    animation: shinePass 5s infinite;
+}
+
+.announcement-content {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 5%;
+    gap: 20px;
+    z-index: 2;
+}
+
+.live-indicator {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(217, 34, 42, 0.15); 
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid rgba(217, 34, 42, 0.4);
+}
+
+.pulse-dot {
+    width: 8px; height: 8px;
+    background-color: #ff3333;
+    border-radius: 50%;
+    animation: redPulse 1.5s infinite;
+}
+
+.live-text {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #ff4d4d;
+    letter-spacing: 1.5px;
+}
+
+.announcement-message {
+    font-size: 1.05rem;
+    letter-spacing: 0.5px;
+}
+
+.announcement-action {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: white;
+    color: #021a3a;
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.announcement-action:hover {
+    background: #00a8ff;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 168, 255, 0.3);
+}
+
+/* Announcement Keyframes */
+@keyframes shinePass {
+    0% { left: -150%; }
+    20%, 100% { left: 200%; }
+}
+@keyframes redPulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 51, 51, 0.7); }
+    70% { box-shadow: 0 0 0 6px rgba(255, 51, 51, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 51, 51, 0); }
+}
+
+/* Responsive adjustment for mobiles */
+@media (max-width: 768px) {
+    .announcement-content { flex-direction: column; gap: 12px; text-align: center; }
+}
+
 .email-link:hover {
     text-decoration: underline;
 }
