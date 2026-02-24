@@ -7,148 +7,6 @@
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="icon" href="https://cdn.dribbble.com/userupload/10871760/file/original-16ab70eca41eafd5561c37303bfe5ed7.jpg?resize=400x0">
-    <style>
-        /* Specific Styles for the Book Layout */
-        body {
-            background-color: #f0ebd8; /* A slightly warmer, paper-like background */
-        }
-        
-        .book-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 70vh;
-            margin: 2rem auto;
-            perspective: 1000px; /* Gives the 3D flipping effect */
-        }
-
-        .book {
-            position: relative;
-            width: 800px; /* Total width of open book */
-            height: 550px;
-            background-color: #fff;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15), inset 0 0 40px rgba(0,0,0,0.05);
-            border-radius: 5px;
-            display: flex;
-        }
-
-        /* The spine in the middle */
-        .book::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            width: 2px;
-            background: linear-gradient(to right, rgba(0,0,0,0.1), rgba(0,0,0,0), rgba(0,0,0,0.1));
-            box-shadow: -2px 0 5px rgba(0,0,0,0.05), 2px 0 5px rgba(0,0,0,0.05);
-            z-index: 10;
-        }
-
-        .page {
-            width: 50%;
-            height: 100%;
-            padding: 40px;
-            background: #faf9f6; /* Off-white paper color */
-            position: absolute;
-            top: 0;
-            overflow: hidden;
-            transition: transform 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
-            backface-visibility: hidden;
-            transform-style: preserve-3d;
-            transform-origin: left center;
-        }
-
-        .page-left {
-            left: 0;
-            transform-origin: right center;
-            z-index: 2;
-        }
-
-        .page-right {
-            left: 50%;
-            z-index: 1;
-        }
-
-        /* Flipped states */
-        .page.flipped-left {
-            transform: rotateY(-180deg);
-            z-index: 1;
-        }
-        
-        .page.flipped-right {
-            transform: rotateY(180deg);
-            z-index: 1;
-        }
-
-        /* Page Content Styling */
-        .page-content {
-            font-family: 'Georgia', serif; /* A classic book font */
-            color: #333;
-            line-height: 1.8;
-            font-size: 1.05rem;
-            text-align: justify;
-        }
-
-        .page-content h2 {
-            font-family: 'Inter', sans-serif;
-            color: var(--dark-blue);
-            margin-bottom: 1.5rem;
-            text-align: center;
-            font-size: 1.5rem;
-        }
-
-        .drop-cap {
-            float: left;
-            font-size: 4rem;
-            line-height: 0.8;
-            margin-right: 10px;
-            color: var(--primary-blue);
-            font-family: 'Inter', sans-serif;
-            font-weight: bold;
-        }
-
-        .page-number {
-            position: absolute;
-            bottom: 20px;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.8rem;
-            color: #888;
-        }
-
-        .page-left .page-number { left: 40px; }
-        .page-right .page-number { right: 40px; }
-
-        /* Navigation Controls */
-        .book-nav {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 4rem;
-        }
-
-        .book-btn {
-            background-color: var(--dark-blue);
-            color: white;
-            border: none;
-            padding: 10px 25px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: background 0.3s;
-        }
-        .book-btn:hover { background-color: var(--primary-blue); }
-        .book-btn:disabled { background-color: #ccc; cursor: not-allowed; }
-
-        /* Responsive adjustment for smaller screens */
-        @media (max-width: 850px) {
-            .book { width: 95vw; height: auto; min-height: 600px; flex-direction: column; }
-            .book::after { display: none; }
-            .page { width: 100%; position: relative; left: 0 !important; transform: none !important; display: none; }
-            .page.active { display: block; }
-            .book-nav { flex-direction: column; align-items: center; }
-        }
-    </style>
 </head>
 <body>
 
@@ -163,6 +21,7 @@
                 <li class="dropdown">
                     <a href="#">More ▼</a>
                     <div class="dropdown-content">
+                        <a href="/campaign/">SNYA Mandate</a>
                         <a href="/blog/">Blog</a>
                         <a href="/story/">Story</a>
                         <a href="/experience/">Experiences</a>
@@ -174,75 +33,11 @@
         </nav>
     </header>
 
-    <main>
-        <h1>My Story</h1>
-        <p class="headline">The Journey So Far</p>
-
-        <div class="book-container">
-            <div class="book" id="myBook">
-                
-                <div class="spread active-spread" data-spread="1">
-                    <div class="page page-left">
-                        <div class="page-content">
-                            <h2>Chapter One: Origins</h2>
-                            <p><span class="drop-cap">I</span> was born on the 25th of December, 2008, in the beautiful archipelago of Seychelles. Growing up surrounded by the vastness of the Indian Ocean, one might assume my gaze would be drawn to the sea. Instead, it was always focused on the sky.</p>
-                            <p style="margin-top: 1rem;">My educational journey began early and remained consistent. I enrolled at the École Française des Seychelles starting from the petite section. This institution provided more than just schooling; it instilled in me a rigorous, analytical framework. The French educational system is demanding, and progressing through to my current level in Première Générale has been foundational. It taught me the discipline required to manage complex systems.</p>
-                        </div>
-                        <div class="page-number">1</div>
-                    </div>
-                    <div class="page page-right">
-                        <div class="page-content">
-                            <p>It was within these walls that my affinity for the sciences—specifically Mathematics and Physics-Chemistry—began to crystalize. These subjects were not merely academic hurdles to clear; they were the language of the physical world. They are the same principles that govern lift, drag, thrust, and weight.</p>
-                            <p style="margin-top: 1rem;">My ambition to become a commercial pilot, with a distinct reverence for the Boeing 777-300ER, was born from this intersection of academic rigor and an inherent fascination with aerospace engineering. The 777 represents the pinnacle of systemic precision. To command such an aircraft requires an unwavering commitment to risk management and situational awareness—skills I began cultivating long before I ever sat in a cockpit.</p>
-                        </div>
-                        <div class="page-number">2</div>
-                    </div>
-                </div>
-
-                <div class="spread" data-spread="2" style="display: none;">
-                    <div class="page page-left">
-                        <div class="page-content">
-                            <h2>Chapter Two: The Enterprise</h2>
-                            <p><span class="drop-cap">T</span>he transition from aspiring aviator to entrepreneur was less of a pivot and more of a parallel trajectory. I realized early on that the operational mindset required for aviation—planning, executing, and managing contingencies—was perfectly applicable to the corporate world.</p>
-                            <p style="margin-top: 1rem;">This realization led to the formation of the Tyler Nicholas Group (TNG). As Chairman of the Board, I needed a structure to house a growing portfolio of ventures. TNG became the holding entity, the central nervous system governing subsidiaries that span across digital marketing, sustainability, and investments.</p>
-                        </div>
-                        <div class="page-number">3</div>
-                    </div>
-                    <div class="page page-right">
-                        <div class="page-content">
-                            <p>One of our core pillars is BlueWave Digital, an agency focused on digital marketing and IT solutions. Alongside that, the Tyler Nicholas Foundation represents my commitment to non-profit impact work within our community. We also conceptualized FoodShare Seychelles, aiming to tackle sustainability through complex logistics and waste reduction.</p>
-                            <p style="margin-top: 1rem;">However, my passion for aviation could not be sidelined. I founded Emirates Group Roblox and served as CEO of Air Seychelles Virtual. These were not mere games; they were sophisticated virtual communities requiring intricate operational control, recruitment strategies, and career systems. They were my first real-world tests in managing people and logistical networks at scale.</p>
-                        </div>
-                        <div class="page-number">4</div>
-                    </div>
-                </div>
-
-                <div class="spread" data-spread="3" style="display: none;">
-                    <div class="page page-left">
-                        <div class="page-content">
-                            <h2>Chapter Three: The Balance</h2>
-                            <p><span class="drop-cap">M</span>anaging a demanding academic curriculum at EFS while steering a corporate group and virtual airlines is a study in precise time management. At sixteen years old, my daily schedule mirrors the operational checklist of the very aircraft I study.</p>
-                            <p style="margin-top: 1rem;">Serving as a Membre Du Conseil de Vie Lycéenne has further developed my understanding of governance and diplomacy. Whether I am advocating for student initiatives or outlining strategic growth plays for TNG Investment, the core requirement remains the same: decisive, ethical leadership.</p>
-                        </div>
-                        <div class="page-number">5</div>
-                    </div>
-                    <div class="page page-right">
-                        <div class="page-content">
-                            <p>My professional narrative is still being written. The duality of my life—the rigorous pursuit of STEM to fuel my commercial aviation dreams, juxtaposed with the aggressive expansion of my entrepreneurial ventures—defines who I am.</p>
-                            <p style="margin-top: 1rem;">The horizon is vast, but the flight path is set. The goal is not just to reach the destination, but to master the complex systems required to get there.</p>
-                        </div>
-                        <div class="page-number">6</div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="book-nav">
-            <button id="prevBtn" class="book-btn" disabled><i class="fas fa-arrow-left"></i> Previous Page</button>
-            <button id="nextBtn" class="book-btn">Next Page <i class="fas fa-arrow-right"></i></button>
-        </div>
-
+    <main style="text-align: center; padding: 8rem 5%; min-height: 60vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <i class="fas fa-tools" style="font-size: 4rem; color: var(--primary-blue); margin-bottom: 1.5rem;"></i>
+        <h1 style="color: var(--dark-blue);">Still in Development</h1>
+        <p class="headline" style="max-width: 500px; margin: 0 auto;">This chapter of the story is currently being written. Check back soon for updates.</p>
+        <a href="/" class="btn" style="margin-top: 2rem;">Return Home</a>
     </main>
 
     <footer>
@@ -259,60 +54,5 @@
         <p class="copyright">&copy; 2026 Tyler Nicholas. All rights reserved.</p>
     </footer>
 
-    <script>
-        const spreads = document.querySelectorAll('.spread');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        let currentSpread = 0;
-
-        function updateBook() {
-            // Hide all spreads
-            spreads.forEach(spread => spread.style.display = 'none');
-            // Show the current spread
-            spreads[currentSpread].style.display = 'contents'; // Use 'contents' or standard flex layout depending on screen size
-
-            // Update button states
-            prevBtn.disabled = currentSpread === 0;
-            nextBtn.disabled = currentSpread === spreads.length - 1;
-            
-            // Handle responsive display logic
-            if (window.innerWidth <= 850) {
-                 spreads.forEach((spread, index) => {
-                     if(index === currentSpread) {
-                         spread.style.display = 'block';
-                         spread.querySelectorAll('.page').forEach(page => page.style.display = 'block');
-                     } else {
-                         spread.querySelectorAll('.page').forEach(page => page.style.display = 'none');
-                     }
-                 });
-            } else {
-                 spreads.forEach((spread, index) => {
-                     if(index === currentSpread) {
-                         spread.style.display = 'contents';
-                     }
-                 });
-            }
-        }
-
-        nextBtn.addEventListener('click', () => {
-            if (currentSpread < spreads.length - 1) {
-                currentSpread++;
-                updateBook();
-            }
-        });
-
-        prevBtn.addEventListener('click', () => {
-            if (currentSpread > 0) {
-                currentSpread--;
-                updateBook();
-            }
-        });
-
-        // Initialize
-        updateBook();
-        
-        // Handle window resize to fix layout
-        window.addEventListener('resize', updateBook);
-    </script>
 </body>
 </html>
