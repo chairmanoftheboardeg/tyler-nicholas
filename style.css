@@ -235,3 +235,275 @@ footer {
     .section-heading { font-size: 1.8rem; }
     footer { padding: 2rem 5%; }
 }
+
+/* ==================================================
+   --- CAMPAIGN PAGE STYLES (Political Theme) ---
+   ================================================== */
+
+.campaign-main {
+    padding: 0;
+    max-width: 100%;
+}
+
+/* Campaign Hero Section */
+.campaign-hero {
+    background-color: var(--dark-blue);
+    background-image: linear-gradient(135deg, #021024 0%, #041e42 100%);
+    color: white;
+    padding: 4rem 5%;
+    border-bottom: 4px solid #d9222a; /* Political Red Border */
+}
+
+.campaign-hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+}
+
+.campaign-manifesto {
+    flex: 1.2;
+    text-align: left;
+}
+
+.campaign-badge {
+    display: inline-block;
+    background-color: #d9222a;
+    color: white;
+    padding: 6px 15px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+}
+
+.campaign-title {
+    font-size: 3.5rem;
+    color: white;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.highlight-red {
+    color: #ff4d4d;
+}
+
+.campaign-intro {
+    font-size: 1.15rem;
+    color: #d1d5db;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    text-align: left;
+    max-width: 100%;
+}
+
+.manifesto-quote {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #00a8ff;
+    font-style: italic;
+    border-left: 5px solid #00a8ff;
+    padding-left: 20px;
+    margin-top: 2rem;
+}
+
+.campaign-poster-container {
+    flex: 0.8;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.official-poster {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    border: 2px solid rgba(255,255,255,0.1);
+}
+
+/* Policy Section */
+.policy-section {
+    padding: 5rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.policy-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.policy-header h2 {
+    font-size: 2.5rem;
+    color: var(--dark-blue);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.policy-header p {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+.red-divider {
+    width: 80px;
+    height: 4px;
+    background-color: #d9222a;
+    margin: 15px auto 0;
+}
+
+.policy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 2rem;
+}
+
+.policy-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+    border-top: 4px solid var(--primary-blue);
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.policy-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* Make the last card span full width to look like a major initiative */
+.policy-card-full {
+    grid-column: 1 / -1;
+    border-top: 4px solid #d9222a;
+}
+
+.policy-icon {
+    font-size: 2rem;
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+}
+
+.policy-card-full .policy-icon {
+    color: #d9222a;
+}
+
+.policy-card h3 {
+    font-size: 1.5rem;
+    color: var(--dark-blue);
+    margin-bottom: 1rem;
+}
+
+.policy-objective {
+    font-size: 1rem;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.policy-list {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+
+.policy-list li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    line-height: 1.5;
+}
+
+.policy-list li::before {
+    content: "\f058"; /* FontAwesome check circle */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    top: 2px;
+    color: var(--primary-blue);
+}
+
+.policy-quote {
+    background: var(--bg-light);
+    padding: 15px;
+    border-left: 3px solid #d9222a;
+    font-style: italic;
+    font-weight: 600;
+    color: var(--dark-blue);
+    font-size: 0.95rem;
+    border-radius: 0 4px 4px 0;
+}
+
+/* Campaign CTA Section */
+.campaign-cta-section {
+    background-color: var(--bg-light);
+    padding: 5rem 5%;
+    text-align: center;
+    border-top: 1px solid #e2e8f0;
+}
+
+.campaign-cta-section h2 {
+    font-size: 2.5rem;
+    color: var(--dark-blue);
+    margin-bottom: 1rem;
+}
+
+.campaign-cta-section p {
+    max-width: 700px;
+    margin: 0 auto 2rem auto;
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.cta-btn-red {
+    background-color: #d9222a;
+}
+
+.cta-btn-red:hover {
+    background-color: #b91c23;
+}
+
+/* Responsive adjustments for Campaign page */
+@media (max-width: 900px) {
+    .campaign-hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .campaign-manifesto, .campaign-title, .campaign-intro {
+        text-align: center;
+    }
+    
+    .manifesto-quote {
+        border-left: none;
+        border-top: 5px solid #00a8ff;
+        padding-left: 0;
+        padding-top: 20px;
+    }
+    
+    .campaign-poster-container {
+        justify-content: center;
+    }
+    
+    .policy-grid {
+        grid-template-columns: 1fr;
+    }
+}
