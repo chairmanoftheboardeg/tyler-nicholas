@@ -1,4 +1,3 @@
-/* style.css (YOUR ORIGINAL CSS - NO CHANGES MADE TO EXISTING RULES) */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
 :root {
@@ -24,190 +23,12 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    width: 100%;
-    overflow-x: hidden; /* Prevent horizontal scroll on mobile */
+    overflow-x: hidden; /* Prevents side-scrolling messes */
 }
 
-/* Loading Screen (Your Original) */
-#loading-screen {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    animation: fadeOut 1.5s forwards;
-    animation-delay: 1s;
-}
-@keyframes fadeOut {
-    100% { opacity: 0; visibility: hidden; }
-}
-.loader-text {
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--dark-blue);
-    letter-spacing: 2px;
-}
-
-/* Navbar (Your Original) */
-header {
-    background: white;
-    border-bottom: 2px solid var(--primary-blue);
-    padding: 1rem 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap; /* for mobile nav stacking */
-}
-.logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--dark-blue);
-    text-decoration: none;
-    text-transform: uppercase;
-}
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-    flex-wrap: wrap; /* for mobile nav stacking */
-}
-nav a {
-    text-decoration: none;
-    color: var(--dark-blue);
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: color 0.3s;
-}
-nav a:hover {
-    color: var(--primary-blue);
-}
-
-/* Dropdown Menu (Your Original) */
-.dropdown {
-    position: relative;
-}
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
-    z-index: 100;
-    border-radius: 8px;
-    top: 100%;
-}
-.dropdown-content a {
-    color: var(--dark-blue);
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    font-weight: 400;
-}
-.dropdown-content a:hover { background-color: var(--bg-light); }
-.dropdown:hover .dropdown-content { display: block; }
-
-/* Main Content Wrapper (Modified for overhaul) */
-main {
-    flex: 1;
-    width: 100%;
-}
-
-/* Hero Section (Original styles kept for safety, but not used in overhaul) */
-.profile-img {
-    width: 200px; height: 200px; border-radius: 50%; border: 5px solid var(--primary-blue);
-    box-shadow: 0 0 20px rgba(0, 168, 255, 0.3); object-fit: cover; margin-bottom: 1.5rem;
-}
-/* ORIGINAL Hero text alignments - used as base for overhaul */
-main h1 { font-size: 3rem; color: var(--primary-blue); margin-bottom: 0.5rem; text-align: center; }
-.headline { font-size: 1.2rem; color: var(--text-light); margin-bottom: 1rem; text-align: center; }
-.description { max-width: 700px; margin: 0 auto 2rem auto; line-height: 1.6; text-align: center; }
-
-.btn {
-    display: inline-block;
-    background-color: var(--primary-blue);
-    color: white;
-    padding: 12px 30px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: transform 0.2s, background 0.2s;
-    text-align: center;
-}
-.btn:hover { background-color: #0088cc; transform: translateY(-2px); }
-
-/* Grid & Cards (Your Original) */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    padding: 0 5%;
-    max-width: 1200px;
-    margin: 2rem auto 3rem auto;
-}
-.card {
-    background: var(--card-bg);
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    transition: transform 0.3s;
-    text-align: center;
-}
-.card:hover { transform: translateY(-5px); }
-.card h3 { color: var(--primary-blue); margin-bottom: 1rem; font-size: 1.4rem;}
-.card p { font-size: 0.95rem; line-height: 1.6; color: var(--text-dark);}
-.card-email { background-color: var(--card-email); }
-
-/* --- Footer Styles (Your Original) --- */
-footer {
-    background-color: #021a3a; 
-    text-align: center;
-    padding: 3rem 5%;
-    margin-top: auto;
-}
-
-.social-icons {
-    margin-bottom: 1.5rem;
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-}
-
-.social-icons a {
-    color: #00a8ff; 
-    font-size: 1.8rem; 
-    text-decoration: none;
-    transition: transform 0.2s ease, color 0.2s ease;
-}
-
-.social-icons a:hover {
-    color: #ffffff; 
-    transform: translateY(-3px);
-}
-
-.contact-info {
-    color: #ffffff; 
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
-}
-
-.email-link {
-    color: #00a8ff; 
-    text-decoration: none;
-    font-weight: 500;
-}
-.email-link:hover {
-    text-decoration: underline;
-}
-
-.copyright {
-    color: #d1d5db; 
-    font-size: 0.85rem;
-}
-
-/* --- ADVANCED CINEMATIC LOADING SCREEN (Your Original) --- */
+/* =========================================
+   1. LOADING SCREEN (Your Original)
+   ========================================= */
 #loader-wrapper {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
@@ -218,14 +39,12 @@ footer {
     pointer-events: none;
     animation: hideLoader 0.1s 2.8s forwards;
 }
-
 .loader-background {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
     background-color: #021a3a;
     animation: fadeOutBg 0.8s 2s cubic-bezier(0.77, 0, 0.175, 1) forwards;
 }
-
 .loader-content {
     position: relative;
     z-index: 10000;
@@ -234,117 +53,97 @@ footer {
     align-items: center;
     animation: fadeOutUp 0.6s 1.7s cubic-bezier(0.77, 0, 0.175, 1) forwards;
 }
-
 .loader-ring {
-    width: 60px;
-    height: 60px;
+    width: 60px; height: 60px;
     border: 3px solid rgba(255,255,255,0.05);
     border-top-color: #00a8ff;
     border-radius: 50%;
     animation: spin 1s linear infinite;
     margin-bottom: 25px;
 }
-
 .loader-text-wrapper { text-align: center; }
-
 .loader-title {
-    display: block;
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: white;
-    margin-bottom: 8px;
-    animation: trackingIn 1.2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+    display: block; font-size: 2.2rem; font-weight: 700; color: white;
+    margin-bottom: 8px; animation: trackingIn 1.2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
 }
-
 .loader-subtitle {
-    display: block;
-    font-size: 0.85rem;
-    color: #00a8ff;
-    letter-spacing: 4px;
-    font-family: monospace;
-    animation: pulseText 1.5s infinite;
+    display: block; font-size: 0.85rem; color: #00a8ff; letter-spacing: 4px;
+    font-family: monospace; animation: pulseText 1.5s infinite;
 }
 
-/* Original Keyframes */
 @keyframes spin { 100% { transform: rotate(360deg); } }
-@keyframes trackingIn { 
-    0% { letter-spacing: -0.5em; opacity: 0; } 
-    40% { opacity: 0.6; } 
-    100% { letter-spacing: 6px; opacity: 1; } 
-}
+@keyframes trackingIn { 0% { letter-spacing: -0.5em; opacity: 0; } 40% { opacity: 0.6; } 100% { letter-spacing: 6px; opacity: 1; } }
 @keyframes pulseText { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
 @keyframes fadeOutUp { 100% { opacity: 0; transform: translateY(-40px); } }
 @keyframes fadeOutBg { 100% { opacity: 0; } }
 @keyframes hideLoader { 100% { z-index: -1; visibility: hidden; } }
 
+/* =========================================
+   2. NAVBAR & HEADER
+   ========================================= */
+header {
+    background: white;
+    border-bottom: 2px solid var(--primary-blue);
+    padding: 1.5rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.logo {
+    font-size: 1.5rem; font-weight: 700; color: var(--dark-blue);
+    text-decoration: none; text-transform: uppercase;
+}
+nav ul {
+    list-style: none; display: flex; gap: 2rem; flex-wrap: wrap; align-items: center;
+}
+nav a {
+    text-decoration: none; color: var(--dark-blue); font-weight: 600; transition: color 0.3s;
+}
+nav a:hover { color: var(--primary-blue); }
 
-/* ==================================================
-   --- OVERHAUL UPDATES (Appended to your CSS) ---
-   --- Focus: Split Hero, Image Left, Responsive ---
-   ================================================== */
+.dropdown { position: relative; }
+.dropdown-content {
+    display: none; position: absolute; background-color: white;
+    min-width: 160px; box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+    z-index: 100; border-radius: 8px; top: 100%; left: 0;
+}
+.dropdown-content a {
+    color: var(--dark-blue); padding: 12px 16px; text-decoration: none;
+    display: block; font-weight: 400;
+}
+.dropdown-content a:hover { background-color: var(--bg-light); border-radius: 8px; }
+.dropdown:hover .dropdown-content { display: block; }
 
-/* --- NEW UPGRADED ANNOUNCEMENT BAR STYLE --- */
+/* =========================================
+   3. UPGRADED ANNOUNCEMENT BAR
+   ========================================= */
 .upgraded-announcement {
-    background-color: var(--dark-blue); /* Your dark blue var */
+    background-color: var(--dark-blue);
     padding: 0.75rem 5%;
-    border-bottom: 2px solid #d9222a; /* Political red theme */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    border-bottom: 2px solid #d9222a;
+    display: flex; justify-content: center; align-items: center;
 }
-
 .announcement-track {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    max-width: 1200px;
-    width: 100%;
+    display: flex; align-items: center; gap: 15px; width: 100%; max-width: 1200px;
 }
-
 .live-badge {
-    background: rgba(217, 34, 42, 0.15); /* Red tint */
-    border: 1px solid rgba(217, 34, 42, 0.4);
-    color: #ff4d4d;
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    padding: 4px 10px;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
+    background: rgba(217, 34, 42, 0.15); border: 1px solid rgba(217, 34, 42, 0.4);
+    color: #ff4d4d; font-size: 0.75rem; font-weight: 700; letter-spacing: 1px;
+    padding: 4px 10px; border-radius: 20px; display: flex; align-items: center; gap: 6px; white-space: nowrap;
 }
-
 .pulse-red-dot {
-    width: 6px; height: 6px;
-    background-color: #ff3333;
-    border-radius: 50%;
+    width: 6px; height: 6px; background-color: #ff3333; border-radius: 50%;
     animation: redPulse 1.5s infinite;
 }
-
-.announcement-txt {
-    color: white;
-    font-size: 0.95rem;
-    flex: 1;
-    margin: 0;
-}
-
+.announcement-txt { color: white; font-size: 0.95rem; flex: 1; margin: 0; }
 .action-link {
-    background-color: white;
-    color: var(--dark-blue);
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 0.8rem;
-    padding: 6px 15px;
-    border-radius: 20px;
-    text-transform: uppercase;
-    transition: background 0.2s, color 0.2s;
+    background-color: white; color: var(--dark-blue); text-decoration: none;
+    font-weight: 700; font-size: 0.8rem; padding: 6px 15px; border-radius: 20px;
+    text-transform: uppercase; transition: background 0.2s, color 0.2s; white-space: nowrap;
 }
-
-.action-link:hover {
-    background-color: var(--primary-blue);
-    color: white;
-}
+.action-link:hover { background-color: var(--primary-blue); color: white; }
 
 @keyframes redPulse {
     0% { box-shadow: 0 0 0 0 rgba(255, 51, 51, 0.7); }
@@ -352,157 +151,87 @@ footer {
     100% { box-shadow: 0 0 0 0 rgba(255, 51, 51, 0); }
 }
 
-/* --- MAIN OVERHAUL LAYOUT --- */
-.overhauled-main {
-    background-color: white; /* Force hero section to sit on white */
+/* =========================================
+   4. MAIN CONTENT & HERO
+   ========================================= */
+main {
+    flex: 1; padding: 4rem 5%; max-width: 1200px; margin: 0 auto;
+    width: 100%; text-align: center;
 }
-
-/* Hero overhaul: Swap image to LEFT, text to RIGHT */
-.hero-overhaul-split {
-    display: flex;
-    min-height: 80vh; /* Sit high on screen */
-    width: 100%;
-    margin-bottom: 0; /* Align directly on white */
+.profile-img {
+    width: 200px; height: 200px; border-radius: 50%;
+    border: 5px solid var(--primary-blue); box-shadow: 0 0 20px rgba(0, 168, 255, 0.3);
+    object-fit: cover; margin: 0 auto 1.5rem auto; display: block;
 }
-
-/* LEFT COLUMN - IMAGE */
-.hero-image-column {
-    flex: 1;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end; /* Stands photo on the boundary */
-    overflow: hidden;
-}
-
-.hero-image-wrapper {
-    position: relative;
-    max-width: 90%;
-    max-height: 100%;
-}
-
-.hero-image-wrapper img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    /* Forces white background generated images to blend perfectly with white CSS bg */
-    mix-blend-mode: multiply; 
-}
-
-/* RIGHT COLUMN - TEXT */
-.hero-text-column {
-    flex: 1.2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-}
-
-.text-block {
-    text-align: left; /* Text aligns right normal mern */
-    max-width: 600px;
-    padding: 4rem;
-}
-
-/* Override center alignments for overhauled hero */
-.text-block h1 { text-align: left; margin-bottom: 0.75rem; }
-.text-block .headline { text-align: left; }
-.text-block .description { text-align: left; margin: 0 0 2rem 0; }
+h1 { font-size: 3rem; color: var(--primary-blue); margin-bottom: 0.5rem; }
+.headline { font-size: 1.2rem; color: var(--text-light); margin-bottom: 1rem; }
+.description { max-width: 700px; margin: 0 auto 2rem auto; line-height: 1.6; }
 
 .hero-btn-row {
-    display: flex;
-    gap: 15px;
+    display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 10px;
 }
-
+.btn {
+    display: inline-block; background-color: var(--primary-blue); color: white;
+    padding: 12px 30px; border-radius: 30px; text-decoration: none;
+    font-weight: 600; transition: transform 0.2s, background 0.2s;
+}
+.btn:hover { background-color: #0088cc; transform: translateY(-2px); }
 .btn-outline-alt {
-    background-color: transparent;
-    border: 2px solid var(--primary-blue);
-    color: var(--primary-blue);
+    display: inline-block; background-color: transparent; border: 2px solid var(--primary-blue);
+    color: var(--primary-blue); padding: 12px 30px; border-radius: 30px;
+    text-decoration: none; font-weight: 600; transition: all 0.2s;
 }
-.btn-outline-alt:hover {
-    background-color: var(--primary-blue);
-    color: white;
+.btn-outline-alt:hover { background-color: var(--primary-blue); color: white; transform: translateY(-2px); }
+
+/* Dividers & Headings */
+.section-divider { border: 0; height: 1px; background: #e2e8f0; margin: 4rem auto; width: 80%; }
+.section-heading { color: var(--dark-blue); font-size: 2.2rem; margin-bottom: 1.5rem; }
+
+/* =========================================
+   5. GRID & CARDS
+   ========================================= */
+.grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem; margin-top: 2rem;
 }
-
-/* NEW CONTENT SECTIONS LAYOUT */
-.main-content-block {
-    background-color: var(--bg-light); /* Return to light grey background for cards */
-    padding: 5rem 5%;
+.card {
+    background: var(--card-bg); padding: 2.5rem; border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.3s;
+    text-align: center; border: 1px solid transparent;
 }
+.card:hover { transform: translateY(-5px); border-color: #e2e8f0; }
+.card h3 { color: var(--primary-blue); margin-bottom: 1rem; }
+.card p { font-size: 0.95rem; line-height: 1.6; color: var(--text-dark); }
+.card-email { background-color: var(--card-email); }
 
-.section-heading {
-    text-align: center;
-    color: var(--dark-blue);
-    font-size: 2.2rem;
-    margin-bottom: 1rem;
-    padding-top: 1rem;
+/* =========================================
+   6. FOOTER
+   ========================================= */
+footer {
+    background-color: #021a3a; text-align: center; padding: 3rem 5%; margin-top: auto; width: 100%;
 }
+.social-icons { margin-bottom: 1.5rem; display: flex; justify-content: center; gap: 1.5rem; }
+.social-icons a { color: #00a8ff; font-size: 1.8rem; text-decoration: none; transition: transform 0.2s, color 0.2s; }
+.social-icons a:hover { color: #ffffff; transform: translateY(-3px); }
+.contact-info { color: #ffffff; font-size: 1.1rem; margin-bottom: 1.5rem; }
+.email-link { color: #00a8ff; text-decoration: none; font-weight: 500; }
+.email-link:hover { text-decoration: underline; }
+.copyright { color: #d1d5db; font-size: 0.9rem; }
 
-/* ==============================================
-   --- RESPONSIVE DESIGN FOR ALL DEVICES ---
-   ============================================== */
-
-/* Desktop & Tablets (Landscape) */
-@media (max-width: 1100px) {
-    main h1 { font-size: 2.5rem; }
-}
-
-/* Tablets (Portrait) & Mobile overhauls */
-@media (max-width: 900px) {
-    .hero-overhaul-split {
-        flex-direction: column-reverse; /* Stacks image below text on mobile for better flow */
-        min-height: auto;
-        padding-top: 3rem;
-    }
-
-    .hero-image-column {
-        min-height: 300px;
-        align-items: flex-start;
-        padding-bottom: 2rem;
-    }
-
-    .hero-image-wrapper img {
-        margin: 0 auto;
-    }
-
-    .text-block {
-        text-align: center;
-        padding: 3rem 5%;
-    }
-
-    .text-block h1 { text-align: center; font-size: 2.2rem; }
-    .text-block .headline { text-align: center; }
-    .text-block .description { text-align: center; margin: 0 auto 2rem auto; }
-    .hero-btn-row { justify-content: center; flex-direction: column; }
-}
-
-/* Small Mobile Screens */
-@media (max-width: 600px) {
-    header {
-        justify-content: center;
-        gap: 10px;
-    }
-    .logo { font-size: 1.2rem; }
-    nav ul {
-        justify-content: center;
-        gap: 10px;
-    }
-    nav a { font-size: 0.8rem; }
+/* =========================================
+   7. MOBILE RESPONSIVENESS
+   ========================================= */
+@media (max-width: 768px) {
+    header { flex-direction: column; justify-content: center; text-align: center; gap: 15px; }
+    nav ul { justify-content: center; gap: 15px; }
     
-    .announcement-track {
-        flex-direction: column;
-        text-align: center;
-        gap: 8px;
-    }
-    .announcement-txt { font-size: 0.8rem; }
+    .announcement-track { flex-direction: column; text-align: center; gap: 10px; }
+    .announcement-txt { text-align: center; font-size: 0.85rem; }
+    
+    h1 { font-size: 2.2rem; }
+    .headline { font-size: 1rem; }
+    .hero-btn-row { flex-direction: column; padding: 0 20px; }
     
     .section-heading { font-size: 1.8rem; }
-    .card { padding: 1.5rem; }
-    .card h3 { font-size: 1.2rem; }
-    
     footer { padding: 2rem 5%; }
-    .social-icons { gap: 1rem; }
-    .social-icons a { font-size: 1.5rem; }
-    .contact-info { font-size: 0.8rem; }
-    .copyright { font-size: 0.75rem; }
 }
