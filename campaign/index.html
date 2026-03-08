@@ -3,240 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mandate | Tyler Nicholas for SNYA</title>
+    <title>Tyler Nicholas | Mandat SNYA 2026</title>
     <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="icon" href="https://cdn.dribbble.com/userupload/10871760/file/original-16ab70eca41eafd5561c37303bfe5ed7.jpg?resize=400x0">
-    <style>
-        /* Diplomatic Campaign Styles */
-        .campaign-header {
-            background: linear-gradient(135deg, #021a3a, #004a8f);
-            color: white;
-            padding: 4rem 5% 5rem 5%;
-            border-radius: 12px;
-            margin-bottom: 3rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            position: relative;
-            overflow: hidden;
-            text-align: center;
-        }
-        
-        .campaign-header::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: url('https://static.vecteezy.com/system/resources/previews/006/616/844/non_2x/seychelles-flag-with-waving-effect-official-proportion-vector.jpg') center/cover;
-            opacity: 0.15;
-            z-index: 1;
-        }
-
-        .campaign-header-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        /* Profile Picture Styling */
-        .campaign-profile {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            border: 4px solid white;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-            object-fit: cover;
-            margin-bottom: 1.5rem;
-            background-color: white; /* In case of transparency */
-        }
-
-        .campaign-header h1 {
-            color: white;
-            font-size: 3.5rem;
-            margin-bottom: 0.5rem;
-            letter-spacing: 1px;
-        }
-        
-        .campaign-header h2 {
-            font-weight: 300;
-            font-size: 1.8rem;
-            color: #dcf2fc;
-            margin-bottom: 1.5rem;
-        }
-
-        .manifesto-section {
-            text-align: left;
-            max-width: 900px;
-            margin: 0 auto 4rem auto;
-            background: white;
-            padding: 3rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            border-top: 4px solid #d9222a; /* Red from the Seychelles flag */
-        }
-
-        /* Policy Grid - adjusted for longer content */
-        .policy-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 2rem;
-            margin-bottom: 4rem;
-        }
-
-        .policy-card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            text-align: left;
-        }
-
-        .policy-card ul {
-            margin-left: 1.5rem;
-            margin-bottom: 1rem;
-            line-height: 1.6;
-            color: #4a5568;
-        }
-
-        .policy-card li {
-            margin-bottom: 0.5rem;
-        }
-
-        .policy-quote {
-            border-left: 4px solid var(--primary-blue);
-            padding-left: 1rem;
-            font-style: italic;
-            color: var(--dark-blue);
-            background: #f8f9fa;
-            padding: 1rem;
-            border-radius: 0 8px 8px 0;
-            margin-top: 1.5rem;
-            font-weight: 600;
-        }
-
-        /* Centered minimal header for the landing page */
-        .minimal-header {
-            background: white;
-            padding: 1.5rem 5%;
-            display: flex;
-            justify-content: center;
-            border-bottom: 2px solid #004a8f;
-        }
-        .minimal-header .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #021a3a;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        @media (max-width: 768px) {
-            .policy-grid { grid-template-columns: 1fr; }
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
-    <header class="minimal-header">
-        <a href="/" class="logo">Tyler Nicholas | Candidat SNYA</a>
+    <div id="loader-wrapper">
+        <div class="loader-background"></div>
+        <div class="loader-content">
+            <div class="loader-ring"></div>
+            <div class="loader-text-wrapper">
+                <span class="loader-title">TYLER NICHOLAS</span>
+                <span class="loader-subtitle">LOADING CAMPAIGN DATA...</span>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <a href="/" class="logo">Tyler Nicholas</a>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about/">About</a></li>
+                <li><a href="/projects/">Projects</a></li>
+                <li><a href="/cv/">CV</a></li>
+                <li class="dropdown">
+                    <a href="#" style="color: #00a8ff;">More ▼</a>
+                    <div class="dropdown-content">
+                        <a href="/campaign/" style="background-color: #f8f9fa; font-weight: bold;">SNYA Mandate</a>
+                        <a href="/blog/">Blog</a>
+                        <a href="/story/">Story</a>
+                        <a href="/experience/">Experiences</a>
+                        <a href="/school/">School</a>
+                        <a href="/socials/">Socials</a>
+                    </div>
+                </li>
+                <li><a href="/contact/">Contact</a></li>
+                <li><a href="/login/" style="color: #00a8ff; font-weight: bold;"><i class="fas fa-lock"></i> Login</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <main>
+    <main class="campaign-main">
         
-        <div class="campaign-header">
-            <div class="campaign-header-content">
-                <img src="https://tyler.tylernicholasgroup.com/image/tyler-nicholas.png" alt="Tyler Nicholas" class="campaign-profile">
-                <h1>Tyler Nicholas</h1>
-                <h2>Candidat pour la SNYA</h2>
-                <p style="font-size: 1.3rem; font-style: italic; color: white;">"Une Vision Stratégique. Votre Voix. Your Future."</p>
+        <section class="campaign-hero">
+            <div class="campaign-hero-content">
+                <div class="campaign-manifesto">
+                    <div class="campaign-badge">CANDIDAT SNYA</div>
+                    <h1 class="campaign-title">Une Vision Stratégique.<br>Votre Voix.<br><span class="highlight-red">Your Future.</span></h1>
+                    <p class="campaign-intro">
+                        The youth of Seychelles require more than just representation; we require a strategic mandate. My candidacy for the Seychelles National Youth Assembly is built on the principle of actionable governance. I am not running to simply occupy a seat; I am running to ensure that <strong>votre voix</strong> is translated into definitive, structured policy.
+                    </p>
+                    <blockquote class="manifesto-quote">
+                        "TURNING YOUR VOICE INTO POLICY"
+                    </blockquote>
+                </div>
+                <div class="campaign-poster-container">
+                    <img src="https://i.ibb.co/hFqH336V/Tyler-Nicholas-SNYC-Made-with-Poster-My-Wall-2.jpg" alt="Tyler Nicholas Campaign Poster" class="official-poster">
+                </div>
             </div>
-        </div>
+        </section>
 
-        <div class="manifesto-section">
-            <h2 style="color: var(--dark-blue); font-size: 2.2rem; margin-bottom: 1.5rem; text-align: center;">A Strategic Mandate for the Youth</h2>
-            <p style="font-size: 1.15rem; line-height: 1.8; margin-bottom: 1.5rem; text-align: justify;">The youth of Seychelles require more than just representation; we require a strategic mandate. My candidacy for the Seychelles National Youth Assembly is built on the principle of actionable governance. I am not running to simply occupy a seat; I am running to ensure that <em>votre voix</em> is translated into definitive, structured policy.</p>
-        </div>
-
-        <h2 style="color: var(--primary-blue); font-size: 2.5rem; margin-bottom: 2rem;">A Policy of Action: The Core Directives</h2>
-        <div class="policy-grid">
-            
-            <div class="policy-card" style="border-top: 4px solid #007a3d;"> <i class="fas fa-users" style="font-size: 2.5rem; color: var(--dark-blue); margin-bottom: 1rem;"></i>
-                <h3 style="color: var(--dark-blue); margin-bottom: 1rem; font-size: 1.4rem;">Youth Empowerment in Schools & Communities</h3>
-                <p style="margin-bottom: 1rem;"><strong>Objective:</strong> To strengthen youth leadership, responsibility, and civic engagement.</p>
-                <ul>
-                    <li><strong>School Leadership Framework:</strong> Establish structured Youth Representative Councils and monthly dialogue sessions with school administration.</li>
-                    <li><strong>Community Action Projects:</strong> Provide small government-backed micro-grants for youth-led community initiatives.</li>
-                </ul>
-                <div class="policy-quote">"Youth should not be spectators of development. They should be architects of it."</div>
+        <section class="policy-section">
+            <div class="policy-header">
+                <h2>A Policy of Action</h2>
+                <p>The Core Directives</p>
+                <div class="red-divider"></div>
             </div>
 
-            <div class="policy-card" style="border-top: 4px solid #fcd856;"> <i class="fas fa-briefcase" style="font-size: 2.5rem; color: var(--dark-blue); margin-bottom: 1rem;"></i>
-                <h3 style="color: var(--dark-blue); margin-bottom: 1rem; font-size: 1.4rem;">National Youth Work Experience Scheme (NYWES)</h3>
-                <p style="margin-bottom: 1rem;"><strong>Objective:</strong> A structured, accessible pathway for students to gain work experience during holidays and weekends.</p>
-                <ul>
-                    <li><strong>Centralised Portal:</strong> A unified online platform listing holiday internships and volunteer opportunities for secondary students.</li>
-                    <li><strong>Employer Incentives:</strong> Recognition certificates and future tax incentives for businesses hosting students.</li>
-                    <li><strong>Structured Outcomes:</strong> Minimum learning requirements and official certificates of completion issued nationally.</li>
-                </ul>
+            <div class="policy-grid">
+                
+                <div class="policy-card">
+                    <div class="policy-icon"><i class="fas fa-users"></i></div>
+                    <h3>Youth Empowerment in Schools & Communities</h3>
+                    <p class="policy-objective"><strong>Objective:</strong> To strengthen youth leadership, responsibility, and civic engagement.</p>
+                    <ul class="policy-list">
+                        <li><strong>School Leadership Framework:</strong> Establish structured Youth Representative Councils and monthly dialogue sessions with school administration.</li>
+                        <li><strong>Community Action Projects:</strong> Provide small government-backed micro-grants for youth-led community initiatives.</li>
+                    </ul>
+                    <div class="policy-quote">"Youth should not be spectators of development. They should be architects of it."</div>
+                </div>
+
+                <div class="policy-card">
+                    <div class="policy-icon"><i class="fas fa-briefcase"></i></div>
+                    <h3>National Youth Work Experience Scheme (NYWES)</h3>
+                    <p class="policy-objective"><strong>Objective:</strong> A structured, accessible pathway for students to gain work experience during holidays and weekends.</p>
+                    <ul class="policy-list">
+                        <li><strong>Centralised Portal:</strong> A unified online platform listing holiday internships and volunteer opportunities for secondary students.</li>
+                        <li><strong>Employer Incentives:</strong> Recognition certificates and future tax incentives for businesses hosting students.</li>
+                        <li><strong>Structured Outcomes:</strong> Minimum learning requirements and official certificates of completion issued nationally.</li>
+                    </ul>
+                </div>
+
+                <div class="policy-card">
+                    <div class="policy-icon"><i class="fas fa-laptop-code"></i></div>
+                    <h3>Digital Skills & Future Careers</h3>
+                    <p class="policy-objective"><strong>Objective:</strong> Preparing Seychelles youth for global competition beyond traditional sectors.</p>
+                    <ul class="policy-list">
+                        <li>Free coding and digital literacy workshops.</li>
+                        <li>AI and technology awareness seminars.</li>
+                        <li>Partnerships with local ICT companies for certification opportunities.</li>
+                    </ul>
+                    <div class="policy-quote">"Not every youth will work in tourism. The digital economy has no island borders."</div>
+                </div>
+
+                <div class="policy-card">
+                    <div class="policy-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <h3>Youth Skills Development Workshops</h3>
+                    <p class="policy-objective"><strong>Objective:</strong> Equipping students with the practical tools needed to enter the professional world confidently.</p>
+                    <ul class="policy-list">
+                        <li>Nationally organized CV writing sessions and Interview Training.</li>
+                        <li>Public speaking and corporate communication workshops.</li>
+                        <li>Entrepreneurship basics for young innovators.</li>
+                    </ul>
+                </div>
+
+                <div class="policy-card policy-card-full">
+                    <div class="policy-icon"><i class="fas fa-exchange-alt"></i></div>
+                    <h3>National Inter-School Exchange Program</h3>
+                    <p class="policy-objective"><strong>Objective:</strong> Fostering national unity and shared educational best practices among Seychellois institutions.</p>
+                    <ul class="policy-list">
+                        <li><strong>Ambassadorial Exchange:</strong> A structured 1-week program where students attend a different institution across the islands.</li>
+                        <li><strong>Knowledge Transfer:</strong> Students observe different school cultures, student council operations, and academic environments while maintaining their coursework.</li>
+                        <li><strong>Implementation:</strong> Returning students act as ambassadors, bringing back constructive ideas and operational improvements to implement in their home schools.</li>
+                    </ul>
+                </div>
+
             </div>
+        </section>
 
-            <div class="policy-card" style="border-top: 4px solid #003f87;"> <i class="fas fa-laptop-code" style="font-size: 2.5rem; color: var(--dark-blue); margin-bottom: 1rem;"></i>
-                <h3 style="color: var(--dark-blue); margin-bottom: 1rem; font-size: 1.4rem;">Digital Skills & Future Careers</h3>
-                <p style="margin-bottom: 1rem;"><strong>Objective:</strong> Preparing Seychelles youth for global competition beyond traditional sectors.</p>
-                <ul>
-                    <li>Free coding and digital literacy workshops.</li>
-                    <li>AI and technology awareness seminars.</li>
-                    <li>Partnerships with local ICT companies for certification opportunities.</li>
-                </ul>
-                <div class="policy-quote">"Not every youth will work in tourism. The digital economy has no island borders."</div>
+        <section class="campaign-cta-section">
+            <h2>Faites Entendre Votre Voix</h2>
+            <p>Effective diplomacy requires open channels. If you have a directive or a concern regarding our national youth policy, I invite you to open a dialogue.</p>
+            <div class="cta-buttons">
+                <a href="/contact/" class="btn cta-btn-red">Contact the Delegation</a>
+                <a href="/" class="btn btn-outline-alt">Return to Personal Website</a>
             </div>
-
-            <div class="policy-card" style="border-top: 4px solid #d9222a;"> <i class="fas fa-chalkboard-teacher" style="font-size: 2.5rem; color: var(--dark-blue); margin-bottom: 1rem;"></i>
-                <h3 style="color: var(--dark-blue); margin-bottom: 1rem; font-size: 1.4rem;">Youth Skills Development Workshops</h3>
-                <p style="margin-bottom: 1rem;"><strong>Objective:</strong> Equipping students with the practical tools needed to enter the professional world confidently.</p>
-                <ul>
-                    <li>Nationally organized CV writing sessions and Interview Training.</li>
-                    <li>Public speaking and corporate communication workshops.</li>
-                    <li>Entrepreneurship basics for young innovators.</li>
-                </ul>
-            </div>
-
-            <div class="policy-card" style="border-top: 4px solid #021a3a; grid-column: 1 / -1; max-width: 800px; margin: 0 auto;"> 
-                <i class="fas fa-exchange-alt" style="font-size: 2.5rem; color: var(--dark-blue); margin-bottom: 1rem;"></i>
-                <h3 style="color: var(--dark-blue); margin-bottom: 1rem; font-size: 1.4rem;">National Inter-School Exchange Program</h3>
-                <p style="margin-bottom: 1rem;"><strong>Objective:</strong> Fostering national unity and shared educational best practices among Seychellois institutions.</p>
-                <ul>
-                    <li><strong>Ambassadorial Exchange:</strong> A structured 1-week program where students attend a different institution across the islands.</li>
-                    <li><strong>Knowledge Transfer:</strong> Students observe different school cultures, student council operations, and academic environments while maintaining their coursework.</li>
-                    <li><strong>Implementation:</strong> Returning students act as ambassadors, bringing back constructive ideas and operational improvements to implement in their home schools.</li>
-                </ul>
-            </div>
-
-        </div>
-
-        <div style="background-color: var(--dark-blue); color: white; padding: 3rem; border-radius: 12px; border: 1px solid #004a8f; margin-bottom: 3rem; max-width: 900px; margin-left: auto; margin-right: auto;">
-            <h2 style="color: white; margin-bottom: 1rem;">Faites Entendre Votre Voix</h2>
-            <p style="margin-bottom: 2rem; color: #dcf2fc; font-size: 1.1rem;">Effective diplomacy requires open channels. If you have a directive or a concern regarding our national youth policy, I invite you to open a dialogue.</p>
-            <a href="mailto:tyler.nicholasefs@gmail.com" class="btn" style="font-size: 1.1rem; padding: 15px 40px; background-color: white; color: var(--dark-blue);">Contact the Delegation</a>
-        </div>
-
-        <div style="text-align: center; margin-top: 4rem; margin-bottom: 2rem;">
-            <a href="/" class="btn" style="background-color: transparent; border: 2px solid var(--dark-blue); color: var(--dark-blue); font-size: 1.1rem; padding: 12px 30px;">
-                <i class="fas fa-arrow-left" style="margin-right: 8px;"></i> Return to Personal Website
-            </a>
-        </div>
+        </section>
 
     </main>
 
     <footer>
         <div class="social-icons">
-            <a href="https://www.linkedin.com/in/tyler-nicholas-62999534a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.instagram.com/t.nicholas26?igsh=MzB6cG10Z20zaHNw" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/tyler-nicholas-62999534a" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/t.nicholas26" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             <a href="https://x.com/TylerNicholasSC" target="_blank" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
             <a href="https://wa.me/qr/HVGZ3S2BPARJL1" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://www.snapchat.com/add/t.nicholas2008?share_id=QkVLos4cCp8&locale=en-USS" target="_blank" aria-label="Snapchat"><i class="fab fa-snapchat"></i></a>
+            <a href="https://www.snapchat.com/add/t.nicholas2008" target="_blank" aria-label="Snapchat"><i class="fab fa-snapchat"></i></a>
         </div>
-        <p class="contact-info">
-            Contact: <a href="mailto:tyler.nicholasefs@gmail.com" class="email-link">tyler.nicholasefs@gmail.com</a>
-        </p>
+        <p class="contact-info">Contact: <a href="mailto:tyler.nicholasefs@gmail.com" class="email-link">tyler.nicholasefs@gmail.com</a></p>
         <p class="copyright">&copy; 2026 Tyler Nicholas. All rights reserved.</p>
     </footer>
 
