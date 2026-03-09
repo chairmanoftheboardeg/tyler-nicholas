@@ -846,4 +846,154 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
+/* ==================================================
+   --- PROJECTS & PORTFOLIO STYLES ---
+   ================================================== */
+
+.projects-main {
+    padding: 0;
+    max-width: 100%;
+    width: 100%;
+}
+
+/* Projects Hero */
+.projects-hero {
+    background-color: var(--card-bg);
+    padding: 6rem 5% 4rem 5%;
+    text-align: center;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.projects-hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.projects-hero h1 {
+    font-size: 3.2rem;
+    color: var(--dark-blue);
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.projects-hero p {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Portfolio Categories */
+.portfolio-category {
+    padding: 5rem 5%;
+    max-width: 100%;
+}
+
+.bg-alt {
+    background-color: #f0f4f8; /* Slightly darker than bg-light to alternate sections */
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.category-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.category-header h2 {
+    font-size: 2.2rem;
+    color: var(--dark-blue);
+    margin-bottom: 0.5rem;
+}
+
+.category-header .blue-divider {
+    width: 60px;
+    height: 4px;
+    background-color: var(--primary-blue);
+    margin: 0 auto;
+}
+
+/* Portfolio Grid & Cards */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.portfolio-item {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+    border-top: 4px solid var(--primary-blue);
+    text-align: left;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+}
+
+.portfolio-item h3 {
+    font-size: 1.5rem;
+    color: var(--dark-blue);
+    margin-bottom: 1rem;
+}
+
+.portfolio-item p {
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    flex-grow: 1; /* Pushes the link to the bottom */
+}
+
+/* Item Tags */
+.item-tag {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    align-self: flex-start;
+}
+
+.tag-corporate { background-color: #e2e8f0; color: #475569; }
+.tag-digital { background-color: #dbeafe; color: #1e40af; }
+.tag-aviation { background-color: #e0e7ff; color: #3730a3; }
+.tag-nonprofit { background-color: #d1fae5; color: #065f46; }
+
+/* Item Links */
+.item-link {
+    color: var(--primary-blue);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.2s;
+}
+
+.item-link:hover {
+    color: var(--dark-blue);
+}
+
+/* Responsive adjustments for Projects */
+@media (max-width: 768px) {
+    .projects-hero h1 {
+        font-size: 2.5rem;
+    }
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+}
 }
