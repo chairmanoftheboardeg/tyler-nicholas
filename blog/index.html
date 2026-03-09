@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="/style.css">
     <link rel="icon" href="https://cdn.dribbble.com/userupload/10871760/file/original-16ab70eca41eafd5561c37303bfe5ed7.jpg?resize=400x0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
 
@@ -68,43 +70,18 @@
 
         <section class="portfolio-category">
             
-            <div class="portfolio-grid" id="blog-feed">
-                
-                <div class="portfolio-item">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                        <span class="item-tag tag-nonprofit">Campaign 2026</span>
-                        <span style="font-size: 0.85rem; color: #718096; font-weight: 600;"><i class="far fa-calendar-alt"></i> Mar 9, 2026</span>
-                    </div>
-                    <h3>Turning Your Voice Into Policy</h3>
-                    <p>Why the youth of Seychelles need more than just representation—we need a strategic mandate. Outlining the core directives for the upcoming SNYA assembly and how we will implement the National Youth Work Experience Scheme.</p>
-                    <a href="#" class="item-link">Read Full Article <i class="fas fa-arrow-right"></i></a>
-                </div>
-
-                <div class="portfolio-item">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                        <span class="item-tag tag-aviation">Aviation</span>
-                        <span style="font-size: 0.85rem; color: #718096; font-weight: 600;"><i class="far fa-calendar-alt"></i> Mar 2, 2026</span>
-                    </div>
-                    <h3>The Philosophy of the Boeing 777</h3>
-                    <p>Aviation is more than a passion; it is a philosophy. Exploring the profound respect for systemic precision, risk management, and situational awareness required on the flight deck, and how it translates to corporate leadership.</p>
-                    <a href="#" class="item-link">Read Full Article <i class="fas fa-arrow-right"></i></a>
-                </div>
-
-                <div class="portfolio-item">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                        <span class="item-tag tag-corporate">Executive</span>
-                        <span style="font-size: 0.85rem; color: #718096; font-weight: 600;"><i class="far fa-calendar-alt"></i> Feb 26, 2026</span>
-                    </div>
-                    <h3>Balancing Academics and Enterprise</h3>
-                    <p>Managing a highly demanding STEM academic schedule while providing strategic guidance as Chairman of the Board for the Tyler Nicholas Group. Here is how I structure my day for maximum efficiency and ethical governance.</p>
-                    <a href="#" class="item-link">Read Full Article <i class="fas fa-arrow-right"></i></a>
-                </div>
-
+            <div id="loading-indicator" style="text-align: center; padding: 3rem; color: #00a8ff;">
+                <i class="fas fa-circle-notch fa-spin fa-3x"></i>
+                <p style="margin-top: 15px; font-weight: 600; font-size: 1.1rem; color: var(--dark-blue);">Syncing with Tyler Nicholas Network...</p>
             </div>
+
+            <div class="portfolio-grid" id="blog-feed" style="display: none;">
+                </div>
             
-            <div id="loading-indicator" style="display: none; text-align: center; padding: 2rem; color: #00a8ff;">
-                <i class="fas fa-circle-notch fa-spin fa-2x"></i>
-                <p style="margin-top: 10px; font-weight: 600;">Loading latest articles...</p>
+            <div id="empty-state" style="display: none; text-align: center; padding: 4rem 5%; max-width: 600px; margin: 0 auto;">
+                <i class="fas fa-folder-open" style="font-size: 4rem; color: #cbd5e1; margin-bottom: 1rem;"></i>
+                <h3 style="color: var(--dark-blue); font-size: 1.5rem; margin-bottom: 0.5rem;">No Published Articles</h3>
+                <p style="color: var(--text-light);">There are currently no public updates available. Check back soon or access the Tyler Nicholas Dashboard to publish new content.</p>
             </div>
 
         </section>
@@ -124,50 +101,70 @@
     </footer>
 
     <script>
-        // This script will be activated when we connect your Supabase database.
-        // It fetches the articles you write in your Tyler Nicholas Dashboard and displays them here.
-        
+        // Initialize Supabase Client using your exact credentials
+        const supabaseUrl = 'https://gyjagotlfyznlujztzil.supabase.co';
+        const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd5amFnb3RsZnl6bmx1anp0emlsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI5OTgyODUsImV4cCI6MjA4ODU3NDI4NX0.m9K1-sPDjku1GLsvA4yk_D1N6gczZRxpK51cJBkBrew';
+        const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+
         async function fetchBlogPosts() {
-            /* // Uncomment this when Supabase is connected:
-            
-            document.getElementById('loading-indicator').style.display = 'block';
-            
-            const { data, error } = await supabase
-                .from('blog_posts')
-                .select('*')
-                .eq('published', true)
-                .order('created_at', { ascending: false });
-
-            if (error) {
-                console.error('Error fetching posts:', error);
-                return;
-            }
-
+            const loadingIndicator = document.getElementById('loading-indicator');
             const blogFeed = document.getElementById('blog-feed');
-            blogFeed.innerHTML = ''; // Clear placeholders
-            
-            data.forEach(post => {
-                const postHTML = `
-                    <div class="portfolio-item">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                            <span class="item-tag tag-corporate">${post.category || 'Update'}</span>
-                            <span style="font-size: 0.85rem; color: #718096; font-weight: 600;">
-                                <i class="far fa-calendar-alt"></i> ${new Date(post.created_at).toLocaleDateString()}
-                            </span>
-                        </div>
-                        <h3>${post.title}</h3>
-                        <p>${post.excerpt}</p>
-                        <a href="/blog/${post.slug}" class="item-link">Read Full Article <i class="fas fa-arrow-right"></i></a>
-                    </div>
+            const emptyState = document.getElementById('empty-state');
+
+            try {
+                // Fetch articles marked as 'published', ordered by newest first
+                const { data, error } = await supabase
+                    .from('blog_posts')
+                    .select('*')
+                    .eq('published', true)
+                    .order('created_at', { ascending: false });
+
+                if (error) throw error;
+
+                // Hide loader
+                loadingIndicator.style.display = 'none';
+
+                if (data.length === 0) {
+                    // Show empty state if no articles
+                    emptyState.style.display = 'block';
+                } else {
+                    // Inject articles into the grid
+                    blogFeed.style.display = 'grid'; // Restore grid display from master CSS
+                    
+                    data.forEach(post => {
+                        // Create a formatted date
+                        const dateObj = new Date(post.created_at);
+                        const formattedDate = dateObj.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+                        
+                        // Default to 'Executive Update' if you haven't added a category column yet
+                        const categoryTag = post.category || 'Executive Update';
+                        
+                        const postHTML = `
+                            <div class="portfolio-item">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                                    <span class="item-tag tag-corporate">${categoryTag}</span>
+                                    <span style="font-size: 0.85rem; color: #718096; font-weight: 600;">
+                                        <i class="far fa-calendar-alt"></i> ${formattedDate}
+                                    </span>
+                                </div>
+                                <h3>${post.title}</h3>
+                                <p>${post.excerpt || 'Read the full update...'}</p>
+                                <a href="/blog/${post.slug || '#'}" class="item-link">Read Full Article <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        `;
+                        blogFeed.innerHTML += postHTML;
+                    });
+                }
+            } catch (err) {
+                console.error("Database connection error:", err);
+                loadingIndicator.innerHTML = `
+                    <i class="fas fa-exclamation-triangle" style="font-size: 3rem; color: #d9222a;"></i>
+                    <p style="margin-top: 15px; font-weight: 600; color: #d9222a;">Connection to Tyler Nicholas Network failed.</p>
                 `;
-                blogFeed.innerHTML += postHTML;
-            });
-            
-            document.getElementById('loading-indicator').style.display = 'none';
-            */
+            }
         }
 
-        // Call the function on page load
+        // Fire the fetch request when the page loads
         document.addEventListener('DOMContentLoaded', fetchBlogPosts);
     </script>
 
