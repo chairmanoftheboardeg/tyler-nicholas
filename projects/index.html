@@ -3,12 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects | Tyler Nicholas</title>
+    <title>Tyler Nicholas | Corporate Ventures & Projects</title>
     <link rel="stylesheet" href="/style.css">
     <link rel="icon" href="https://cdn.dribbble.com/userupload/10871760/file/original-16ab70eca41eafd5561c37303bfe5ed7.jpg?resize=400x0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
+
+    <div id="loader-wrapper">
+        <div class="loader-background"></div>
+        <div class="loader-content">
+            <div class="loader-ring"></div>
+            <div class="loader-text-wrapper">
+                <span class="loader-title">TYLER NICHOLAS</span>
+                <span class="loader-subtitle">LOADING PORTFOLIO DATA...</span>
+            </div>
+        </div>
+    </div>
 
     <header>
         <a href="/" class="logo">Tyler Nicholas</a>
@@ -16,11 +27,12 @@
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/about/">About</a></li>
-                <li><a href="/projects/">Projects</a></li>
+                <li><a href="/projects/" style="color: #00a8ff; font-weight: bold;">Projects</a></li>
                 <li><a href="/cv/">CV</a></li>
                 <li class="dropdown">
                     <a href="#">More ▼</a>
                     <div class="dropdown-content">
+                        <a href="/campaign/">SNYA Mandate</a>
                         <a href="/blog/">Blog</a>
                         <a href="/story/">Story</a>
                         <a href="/experience/">Experiences</a>
@@ -28,65 +40,110 @@
                         <a href="/socials/">Socials</a>
                     </div>
                 </li>
+                <li><a href="/contact/">Contact</a></li>
+                <li><a href="/login/" style="color: #00a8ff; font-weight: bold;"><i class="fas fa-lock"></i> Login</a></li>
             </ul>
         </nav>
     </header>
 
-<main>
-        <h1>My Projects</h1>
-        <p class="headline">Business, Non-Profit, and Technological Ventures</p>
+    <main class="projects-main">
+        
+        <section class="projects-hero">
+            <div class="projects-hero-content">
+                <h1>Corporate Ventures & Initiatives</h1>
+                <p>An ecosystem of digital services, aviation management, and philanthropic organizations operating under the Tyler Nicholas Group.</p>
+            </div>
+        </section>
 
-        <div class="grid">
-            <div class="card">
-                <h3>Tyler Nicholas Group (TNG)</h3>
-                <p><strong>Holding Group</strong><br><br>Owns and groups your ventures under one identity.</p>
+        <section class="portfolio-category">
+            <div class="category-header">
+                <h2>Digital & Corporate Services</h2>
+                <div class="blue-divider"></div>
             </div>
-            <div class="card">
-                <h3>Tyler Nicholas Foundation</h3>
-                <p><strong>Non-Profit Impact</strong><br><br>Non-profit for youth/community impact work.</p>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="item-tag tag-corporate">Holding Company</div>
+                    <h3>Tyler Nicholas Group</h3>
+                    <p>The central executive entity overseeing a diverse network of digital subsidiaries, ensuring operational excellence, ethical governance, and strategic alignment across all ventures.</p>
+                    <a href="#" class="item-link">Executive Overview <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="item-tag tag-digital">Digital Subsidiary</div>
+                    <h3>Falcon LTD</h3>
+                    <p>A premier subsidiary wholly owned by the Tyler Nicholas Group. Falcon LTD serves as a high-fidelity digital storefront, providing cutting-edge assets, custom Discord bots, and community services.</p>
+                    <a href="#" class="item-link">View Services <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="item-tag tag-digital">Digital Services</div>
+                    <h3>Blackwood Digital Services</h3>
+                    <p>A specialized firm operating under the Tyler Nicholas Group umbrella, dedicated to delivering robust digital solutions, web development, and brand identity design.</p>
+                    <a href="#" class="item-link">Explore Blackwood <i class="fas fa-arrow-right"></i></a>
+                </div>
             </div>
-            <div class="card">
-                <h3>BlueWave Digital</h3>
-                <p><strong>Tech Agency</strong><br><br>Digital marketing + IT solutions agency.</p>
+        </section>
+
+        <section class="portfolio-category bg-alt">
+            <div class="category-header">
+                <h2>Virtual Aviation Leadership</h2>
+                <div class="blue-divider"></div>
             </div>
-            <div class="card">
-                <h3>Emirates Group Roblox</h3>
-                <p><strong>Aviation Community</strong><br><br>Virtual airline-group community with ops + careers systems.</p>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="item-tag tag-aviation">Aviation Management</div>
+                    <h3>Emirates Group Roblox</h3>
+                    <p>Executive oversight of a premier virtual airline group. Responsibilities include strategic management, fleet logistics, and overseeing the successful launch of its new Fly Dubai subsidiary.</p>
+                    <a href="#" class="item-link">View Operations <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="item-tag tag-aviation">Aviation Management</div>
+                    <h3>Air Seychelles Roblox</h3>
+                    <p>Managing the corporate structure, website operations, and in-game operational headquarters for the virtual representation of the national carrier.</p>
+                    <a href="#" class="item-link">View Operations <i class="fas fa-arrow-right"></i></a>
+                </div>
             </div>
-            <div class="card">
-                <h3>FoodShare Seychelles</h3>
-                <p><strong>Sustainability Logistics</strong><br><br>Food-waste reduction + redistribution logistics concept.</p>
+        </section>
+
+        <section class="portfolio-category">
+            <div class="category-header">
+                <h2>Philanthropy & Community</h2>
+                <div class="blue-divider"></div>
             </div>
-            <div class="card">
-                <h3>Seychelles By TNG</h3>
-                <p><strong>National Directory</strong><br><br>All-in-one Seychelles directory, news, jobs, tourism, tools.</p>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="item-tag tag-nonprofit">Non-Profit</div>
+                    <h3>Tyler Nicholas Foundation</h3>
+                    <p>A dedicated non-profit initiative focused on driving youth empowerment, civic engagement, and rigorous environmental advocacy throughout Seychelles.</p>
+                    <a href="#" class="item-link">Our Mission <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="item-tag tag-nonprofit">Community Initiative</div>
+                    <h3>FoodShare Seychelles</h3>
+                    <p>A developing community-driven platform designed to coordinate food distribution and sharing, utilizing a modern, secure database backend to connect resources with those in need.</p>
+                    <a href="#" class="item-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
             </div>
-            <div class="card">
-                <h3>TNG Investment</h3>
-                <p><strong>Investments Capital</strong><br><br>Investment arm for funding, assets, and growth plays across your group.</p>
-            </div>
-            <div class="card">
-                <h3>TNG E-COMMERCE</h3>
-                <p><strong>Sales Stores</strong><br><br>E-commerce portfolio brand managing multiple online store ventures. LumoraX | Falcon LTD.</p>
-            </div>
-        </div>
+        </section>
+
     </main>
 
     <footer>
         <div class="social-icons">
-            <a href="https://www.linkedin.com/in/tyler-nicholas-62999534a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.instagram.com/t.nicholas26?igsh=MzB6cG10Z20zaHNw" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/tyler-nicholas-62999534a" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/t.nicholas26" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             <a href="https://x.com/TylerNicholasSC" target="_blank" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
             <a href="https://wa.me/qr/HVGZ3S2BPARJL1" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://www.snapchat.com/add/t.nicholas2008?share_id=QkVLos4cCp8&locale=en-USS" target="_blank" aria-label="Snapchat"><i class="fab fa-snapchat"></i></a>
+            <a href="https://www.snapchat.com/add/t.nicholas2008" target="_blank" aria-label="Snapchat"><i class="fab fa-snapchat"></i></a>
         </div>
-    
-    <p class="contact-info">
-        Contact: <a href="mailto:tyler.nicholasefs@gmail.com" class="email-link">tyler.nicholasefs@gmail.com</a>
-    </p>
-    
-    <p class="copyright">&copy; 2026 Tyler Nicholas. All rights reserved.</p>
-</footer>
+        <p class="contact-info">Contact: <a href="mailto:tyler.nicholasefs@gmail.com" class="email-link">tyler.nicholasefs@gmail.com</a></p>
+        <p class="copyright">&copy; 2026 Tyler Nicholas. All rights reserved.</p>
+    </footer>
 
-    </body>
+</body>
 </html>
