@@ -259,3 +259,218 @@ footer { background-color: #021a3a; text-align: center; padding: 3rem 5%; margin
     .manifesto-quote { border-left: none; border-top: 5px solid #00a8ff; padding-left: 0; padding-top: 20px; }
     .policy-grid { grid-template-columns: 1fr; }
 }
+
+/* ==================================================
+   --- 10. CV / RESUME PAGE STYLES ---
+   ================================================== */
+
+.cv-main {
+    padding: 0;
+    width: 100%;
+    background-color: var(--bg-light);
+}
+
+/* CV Hero Section */
+.cv-hero {
+    background-color: var(--dark-blue);
+    padding: 5rem 5% 4rem 5%;
+    text-align: center;
+    color: white;
+    border-bottom: 4px solid var(--primary-blue);
+}
+
+.cv-hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cv-hero h1 {
+    font-size: 3rem;
+    color: white;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+}
+
+.cv-hero p {
+    font-size: 1.15rem;
+    color: #a0aec0;
+    margin-bottom: 2rem;
+}
+
+.cv-download-btn {
+    font-size: 1.1rem;
+    padding: 15px 40px;
+    box-shadow: 0 10px 25px rgba(0, 168, 255, 0.3);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cv-download-btn i {
+    font-size: 1.3rem;
+}
+
+/* CV Document Layout */
+.cv-document {
+    padding: 4rem 5%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.cv-container {
+    background: white;
+    padding: 4rem;
+    border-radius: 8px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    border-top: 8px solid var(--dark-blue);
+    text-align: left;
+}
+
+.cv-header {
+    text-align: center;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 2rem;
+    margin-bottom: 3rem;
+}
+
+.cv-header h2 {
+    font-size: 2.5rem;
+    color: var(--dark-blue);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+}
+
+.cv-header p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+}
+
+.cv-contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+.cv-contact-info span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* CV Body Sections */
+.cv-section {
+    margin-bottom: 3.5rem;
+}
+
+.cv-section-title {
+    font-size: 1.4rem;
+    color: var(--dark-blue);
+    border-bottom: 2px solid var(--primary-blue);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cv-section-title i {
+    color: var(--primary-blue);
+}
+
+.cv-item {
+    margin-bottom: 2rem;
+}
+
+.cv-item:last-child {
+    margin-bottom: 0;
+}
+
+.cv-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 0.25rem;
+}
+
+.cv-item-header h4 {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+}
+
+.cv-date {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary-blue);
+    background: var(--bg-light);
+    padding: 3px 10px;
+    border-radius: 15px;
+}
+
+.cv-company {
+    font-size: 1.05rem;
+    color: var(--text-light);
+    font-weight: 600;
+    font-style: italic;
+    margin-bottom: 0.75rem;
+}
+
+.cv-desc {
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+}
+
+.cv-bullets {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 1rem;
+}
+
+.cv-bullets li {
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+}
+
+/* Skills Grid */
+.cv-skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.cv-skills-grid span {
+    background-color: var(--bg-light);
+    border: 1px solid #e2e8f0;
+    color: var(--dark-blue);
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Mobile Responsiveness for CV */
+@media (max-width: 768px) {
+    .cv-container {
+        padding: 2rem;
+    }
+    .cv-item-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    .cv-contact-info {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .cv-hero h1 {
+        font-size: 2.2rem;
+    }
+}
