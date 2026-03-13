@@ -3,121 +3,213 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tyler Nicholas | Chairman & Aspiring Pilot</title>
-    <link rel="stylesheet" href="/style.css">
-    <link rel="icon" href="https://cdn.dribbble.com/userupload/10871760/file/original-16ab70eca41eafd5561c37303bfe5ed7.jpg?resize=400x0">
+    <title>Tyler Nicholas | Official Portal</title>
+    <link rel="icon" href="https://media.licdn.com/dms/image/v2/D4D03AQGRKh3DGxSABQ/profile-displayphoto-scale_400_400/B4DZr4z1B9GwAg-/0/1765110932319?e=1774483200&v=beta&t=kfbgGyoPquwXygrYf0wrgOBTe-Mu4JydRJcYd3WKm4g" type="image/jpeg">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-off-white: #f8fbfc;
+            --bg-white: #ffffff;
+            --campaign-blue: #00AEEF;
+            --campaign-red: #E60026; /* Bringing in the red from your campaign site */
+            --black: #111111;
+            --text-subtitle: #666666;
+            --border-light: #e0e6ed;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--bg-off-white);
+            color: var(--black);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 2rem 5%;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .portal-container {
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--bg-white);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            margin-bottom: 1.5rem;
+        }
+
+        .portal-header h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .portal-header p {
+            color: var(--text-subtitle);
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+        }
+
+        /* The Split Choices */
+        .choice-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .choice-card {
+            background-color: var(--bg-white);
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--black);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+            border: 1px solid var(--border-light);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .choice-card i {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .choice-card h2 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .choice-card p {
+            font-size: 0.95rem;
+            color: var(--text-subtitle);
+        }
+
+        /* Hover Effects to Match Branding */
+        .portfolio-card:hover {
+            border-color: var(--campaign-blue);
+            box-shadow: 0 15px 40px rgba(0, 174, 239, 0.15);
+            transform: translateY(-5px);
+        }
+        .portfolio-card:hover i {
+            color: var(--campaign-blue);
+            transform: scale(1.1);
+        }
+
+        .campaign-card:hover {
+            border-color: var(--campaign-red);
+            box-shadow: 0 15px 40px rgba(230, 0, 38, 0.15);
+            transform: translateY(-5px);
+        }
+        .campaign-card:hover i {
+            color: var(--campaign-red);
+            transform: scale(1.1);
+        }
+
+        /* Social Links */
+        .social-directory {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .social-circle {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: var(--bg-white);
+            border: 1px solid var(--border-light);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--black);
+            font-size: 1.2rem;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-circle:hover {
+            background-color: var(--black);
+            color: var(--bg-white);
+            border-color: var(--black);
+            transform: translateY(-3px);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .choice-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .portal-header h1 {
+                font-size: 1.8rem;
+            }
+            .choice-card {
+                padding: 2.5rem 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <div id="loader-wrapper">
-        <div class="loader-background"></div>
-        <div class="loader-content">
-            <div class="loader-ring"></div>
-            <div class="loader-text-wrapper">
-                <span class="loader-title">TYLER NICHOLAS</span>
-                <span class="loader-subtitle">SYSTEM INITIALIZING...</span>
-            </div>
+    <div class="portal-container">
+        
+        <div class="portal-header">
+            <img src="https://media.licdn.com/dms/image/v2/D4D03AQGRKh3DGxSABQ/profile-displayphoto-scale_400_400/B4DZr4z1B9GwAg-/0/1765110932319?e=1774483200&v=beta&t=kfbgGyoPquwXygrYf0wrgOBTe-Mu4JydRJcYd3WKm4g" alt="Tyler Nicholas" class="profile-pic">
+            <h1>Tyler Nicholas</h1>
+            <p>Welcome. Please select your destination.</p>
         </div>
+
+        <div class="choice-grid">
+            
+            <a href="https://tyler-nicholas.online" class="choice-card portfolio-card">
+                <i class="fa-solid fa-briefcase" style="color: var(--campaign-blue);"></i>
+                <h2>Professional Portfolio</h2>
+                <p>Ventures, Aviation & Civic Leadership</p>
+            </a>
+
+            <a href="https://vote.tyler-nicholas.online" class="choice-card campaign-card">
+                <i class="fa-solid fa-check-to-slot" style="color: var(--campaign-red);"></i>
+                <h2>SNYA Campaign</h2>
+                <p>Vision & Policies for the 21st Cohort</p>
+            </a>
+
+        </div>
+
+        <div class="social-directory">
+            <a href="https://www.linkedin.com/in/tyler-nicholas-62999534a" target="_blank" class="social-circle" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://x.com/TylerNicholasSC" target="_blank" class="social-circle" title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.instagram.com/t.nicholas26" target="_blank" class="social-circle" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://wa.me/qr/HVGZ3S2BPARJL1" target="_blank" class="social-circle" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://www.snapchat.com/add/t.nicholas2008" target="_blank" class="social-circle" title="Snapchat"><i class="fa-brands fa-snapchat"></i></a>
+        </div>
+
     </div>
-
-    <header>
-        <a href="/" class="logo">Tyler Nicholas</a>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about/">About</a></li>
-                <li><a href="/projects/">Projects</a></li>
-                <li><a href="/cv/">CV</a></li>
-                <li class="dropdown">
-                    <a href="#">More ▼</a>
-                    <div class="dropdown-content">
-                        <a href="/campaign/">SNYA Mandate</a>
-                        <a href="/blog/">Blog</a>
-                        <a href="/story/">Story</a>
-                        <a href="/experience/">Experiences</a>
-                        <a href="/school/">School</a>
-                        <a href="/socials/">Socials</a>
-                    </div>
-                </li>
-                <li><a href="/contact/">Contact</a></li>
-                <li><a href="/login/" style="color: #00a8ff; font-weight: bold;"><i class="fas fa-lock"></i> Login</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <div class="upgraded-announcement">
-        <div class="announcement-track">
-            <div class="live-badge">
-                <span class="pulse-red-dot"></span>
-                LIVE UPDATES
-            </div>
-            <p class="announcement-txt"><strong>CAMPAIGN 2026:</strong> Support Tyler Nicholas | SNYA/SNYC École Française Representative</p>
-            <a href="/campaign/" class="action-link">View Mandate</a>
-        </div>
-    </div>
-
-    <main>
-        <img src="https://tyler.tylernicholasgroup.com/image/tyler-nicholas.png" alt="Tyler Nicholas" class="profile-img">
-        <h1>Tyler Nicholas</h1>
-        <p class="headline">Chairman, Aspiring Pilot & STEM Student</p>
-        <p class="description">Specializing in Mathematics and Physics-Chemistry, dedicated to advancing corporate responsibilities alongside my ambition to pursue a career as a commercial pilot.</p>
-        
-        <div class="hero-btn-row">
-            <a href="/story/" class="btn">Discover My Journey</a>
-            <a href="/contact/" class="btn btn-outline-alt">Get in Touch</a>
-        </div>
-
-        <hr class="section-divider">
-
-        <h2 class="section-heading">Executive Core</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Vision & Focus</h3>
-                <p>Balancing academic rigor at EFS with strategic corporate management within the Tyler Nicholas Group.</p>
-            </div>
-            <div class="card">
-                <h3>Aviation</h3>
-                <p>A deep philosophy of systemic precision, risk management, and situational awareness aimed at the Boeing 777-300ER.</p>
-            </div>
-            <div class="card">
-                <h3>Leadership</h3>
-                <p>Overseeing subsidiaries and driving growth through decisive leadership and ethical governance.</p>
-            </div>
-        </div>
-
-        <h2 class="section-heading" style="margin-top: 3rem;">Ventures & Impact</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Tyler Nicholas Group</h3>
-                <p>The central holding company overseeing a diverse portfolio of digital subsidiaries and services.</p>
-            </div>
-            <div class="card card-email">
-                <h3>Falcon LTD</h3>
-                <p>A premier subsidiary providing high-quality digital assets and cutting-edge Discord services.</p>
-            </div>
-            <div class="card">
-                <h3>Virtual Aviation</h3>
-                <p>Executive management of major virtual airline hubs, focusing on operational logistics.</p>
-            </div>
-        </div>
-    </main>
-
-    <footer>
-        <div class="social-icons">
-            <a href="https://www.linkedin.com/in/tyler-nicholas-62999534a" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.instagram.com/t.nicholas26" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://x.com/TylerNicholasSC" target="_blank" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="https://wa.me/qr/HVGZ3S2BPARJL1" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://www.snapchat.com/add/t.nicholas2008" target="_blank" aria-label="Snapchat"><i class="fab fa-snapchat"></i></a>
-        </div>
-        
-        <p class="contact-info">
-            Contact: <a href="mailto:tyler.nicholasefs@gmail.com" class="email-link">tyler.nicholasefs@gmail.com</a>
-        </p>
-        
-        <p class="copyright">&copy; 2026 Tyler Nicholas. All rights reserved.</p>
-    </footer>
 
 </body>
 </html>
